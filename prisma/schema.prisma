@@ -27,15 +27,16 @@ model User {
 model Game {
     id           String      @id @default(cuid())
     name         String      @unique
+    image        String
     description  String
-    price        String
-    salePrice    String
-    rating       String
+    price        Float
+    salePrice    Float
+    rating       Float
     releaseDate  String
     genre        String
     developer    String
-    minSystemReq String
-    recSystemReq String
+    minSystemReq String?
+    recSystemReq String?
     reviews      Review[]
     purchased    Purchased[]
 }
