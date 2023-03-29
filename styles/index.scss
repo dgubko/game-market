@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+.main-page {
+  display: flex;
+  background-color: #1b1f32;
+  min-height: 100vh;
+  height: auto;
+  .side-panel {
+    min-width: 15%;
+    color: white;
+    background-color: #181c2c;
+  }
+  .card {
+    color: white;
+    .card-image {
+      width: 200px;
+    }
+    .card-name {
+      font-size: 12px;
+    }
+  }
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 40px;
+}
