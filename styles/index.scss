@@ -12,10 +12,24 @@ body {
     color: white;
     background-color: #181c2c;
   }
+
+  .logo {
+    max-width: 80%;
+  }
+
   .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 12px;
+    border-radius: 8px;
+    width: 240px;
+    height: 240px;
+    background-color: #181c2c;
     color: white;
     .card-image {
-      width: 200px;
+      width: auto;
+      height: 60%;
     }
     .card-name {
       font-size: 12px;
@@ -27,4 +41,21 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 40px;
+}
+
+.price-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .buy-button {
+    text-decoration: none;
+    color: #171b2b;
+    background-color: #fbff39;
+    padding: 4px 28px;
+    border-radius: 4px;
+  }
+}
+
+.card-description {
+  padding: 0 12px;
 }
