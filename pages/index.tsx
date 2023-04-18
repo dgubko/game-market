@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import { GamesContainer } from "../components/GamesContainer/GamesContainer";
 import { SidePanel } from "@/components/SidePanel/SidePanel";
-import { Form } from "@/components/Form/Form";
+import { SearchForm } from "@/components/SearchForm/SearchForm";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,7 @@ export default function Home() {
       <main className="main-page">
         <SidePanel />
         <div>
-          <Form />
+          <SearchForm />
           <GamesContainer />
         </div>
       </main>
