@@ -8,10 +8,6 @@ export const SearchForm = () => {
     setSearch(e.target.value);
   };
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-  };
-
   React.useEffect(() => {
     Router.push({
       query: { search: search.toLowerCase() },
@@ -19,13 +15,12 @@ export const SearchForm = () => {
   }, [search]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Search a game..."
-        value={search}
-        onChange={handleChange}
-      />
-    </form>
+    <input
+      className="search-input"
+      type="text"
+      placeholder="Search a game..."
+      value={search}
+      onChange={handleChange}
+    />
   );
 };
