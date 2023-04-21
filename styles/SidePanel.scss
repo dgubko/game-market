@@ -1,0 +1,68 @@
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 15%;
+  color: white;
+  background-color: #181c2c;
+  padding: 24px 16px;
+  .user-info {
+    display: grid;
+    grid-template-columns: min-content auto min-content;
+    align-items: center;
+    background-color: #3e9572;
+    padding: 8px;
+    position: relative;
+    margin: 32px 0;
+    .avatar-placeholder {
+      width: 32px;
+      height: 32px;
+      border-radius: 2px;
+      background-color: #181c2c;
+      margin-right: 8px;
+    }
+    p {
+      margin: 0;
+      font-family: "Chakra Petch", sans-serif;
+    }
+    a {
+      background: #214a3a;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: aliceblue;
+      text-decoration: none;
+      font-family: "Caudex", serif;
+    }
+  }
+  nav {
+    display: grid;
+    gap: 16px;
+  }
+  .side-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    font-family: "Commissioner", sans-serif;
+    color: aliceblue;
+    svg {
+      fill: aliceblue;
+    }
+    &.active {
+      color: #fbff39;
+      svg {
+        fill: #fbff39;
+      }
+    }
+  }
+  .logo {
+    max-width: 80%;
+  }
+}
