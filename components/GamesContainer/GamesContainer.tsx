@@ -24,14 +24,23 @@ export const GamesContainer = () => {
   });
 
   const filtered = games.filter((item) => {
-    return item.name.toLowerCase().includes(query.search);
+    return !query.search || item.name.toLowerCase().includes(query.search);
+  });
+
+  const sorted = [...filtered].sort((a, b) => {
+    const key = query.filter as keyof typeof a;
+    const ancCondition = a[key] > b[key];
+    const decCondition = a[key] < b[key];
+    const condition = query.reversed === "true" ? decCondition : ancCondition;
+
+    return condition ? 1 : -1;
   });
 
   return (
     <div className="game-container">
       {isLoading && <p>loading....</p>}
       {errorMsg && <p>errorMsg</p>}
-      {filtered.map((item) => (
+      {(query.filter ? sorted : filtered).map((item) => (
         <Card key={item.id} {...item} />
       ))}
     </div>

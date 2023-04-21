@@ -3,10 +3,15 @@ import { Inter } from "next/font/google";
 import { GamesContainer } from "../components/GamesContainer/GamesContainer";
 import { SidePanel } from "@/components/SidePanel/SidePanel";
 import { SearchForm } from "@/components/SearchForm/SearchForm";
+import { SortFilter } from "@/components/SortFilter/SortFilter";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <Head>
@@ -18,7 +23,10 @@ export default function Home() {
       <main className="main-page">
         <SidePanel />
         <div>
-          <SearchForm />
+          <form onSubmit={handleSubmit}>
+            <SearchForm />
+            <SortFilter />
+          </form>
           <GamesContainer />
         </div>
       </main>

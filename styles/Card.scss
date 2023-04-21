@@ -1,0 +1,45 @@
+.card {
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  border-radius: 4px;
+  background-color: #181c2c;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333952;
+  color: white;
+  & > div:not(:first-of-type) {
+    padding-inline: 16px;
+  }
+  .card-image {
+    height: 124px;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+    img {
+      width: 100%;
+    }
+  }
+  .card-name {
+    font-family: "Chakra Petch", sans-serif;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      display: flex;
+      gap: 8px;
+    }
+    p {
+      font-weight: bold;
+      font-size: 18px;
+      &.on-sale {
+        color: grey;
+        text-decoration: line-through;
+      }
+      &:not(:first-of-type) {
+        color: #91d55a;
+      }
+    }
+  }
+}
