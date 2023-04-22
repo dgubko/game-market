@@ -30,6 +30,7 @@ export const SidePanel = () => {
       <nav>
         {sideLinks.map(({ icon, link, name }) => (
           <Link
+            key={name}
             className={
               router.pathname === link ? "active side-link" : "side-link"
             }

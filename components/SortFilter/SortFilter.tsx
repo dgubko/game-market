@@ -19,9 +19,7 @@ export const SortFilter = () => {
 
   return (
     <select className="selector-menu" onChange={handleChange} value={filter}>
-      <option value="" selected>
-        Sort By
-      </option>
+      <option value="">Sort By</option>
       <option value="rating">Rating: Low to High</option>
       <option value="rating-reverse">Rating: High to Low</option>
       {/* <option value="releaseDate">Release date</option> */}
