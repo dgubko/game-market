@@ -23,7 +23,7 @@ export default function Home() {
       <main className="main-page">
         <SidePanel />
         <div>
-          <form onSubmit={handleSubmit}>
+          <form className="filters" onSubmit={handleSubmit}>
             <SearchForm />
             <SortFilter />
           </form>
