@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  background-color: hsl(230, 30%, 18%);
 }
 
 .main-page {
@@ -33,4 +34,10 @@ body {
 
 .card-description {
   padding: 0 12px;
+}
+
+@media (max-width: 600px) {
+  .main-page {
+    display: block;
+  }
 }
