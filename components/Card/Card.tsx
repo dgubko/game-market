@@ -17,7 +17,7 @@ export const Card = (item) => {
           </p>
           {hasSalePrice && <p>${item.salePrice}</p>}
         </span>
-        <Link className="buy-button" href={"/id"}>
+        <Link className="buy-button" href={`/game/${item.id}`}>
           Buy
         </Link>
       </div>
