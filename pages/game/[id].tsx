@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 const GamePage = ({ game }) => {
+  console.log(game);
   return (
     <>
       <Head>
@@ -9,8 +10,13 @@ const GamePage = ({ game }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <h1>GamePage</h1>
+      <div className="game-page">
+        <p>{game.name}</p>
+        <img className="game-page-image" src={game.image} />
+        <p>{game.genre}</p>
+        <p>{game.description}</p>
+        <p>{game.developer}</p>
+        <p>{game.minSystemReq}</p>
       </div>
     </>
   );
