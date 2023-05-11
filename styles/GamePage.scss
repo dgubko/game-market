@@ -1,0 +1,76 @@
+.game-page {
+  display: grid;
+  grid-template-areas: "Banner Banner" "About Req" "Reviews Req";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: calc(320px - 2rem) 1fr 1fr;
+  grid-gap: 2rem;
+  padding: 2rem;
+  position: relative;
+  color: #fff;
+}
+
+#banner {
+  grid-area: Banner;
+  position: absolute;
+  left: -2rem;
+  top: -2rem;
+  height: 320px;
+  overflow: hidden;
+  width: calc(100% + 4rem);
+  img {
+    width: 100%;
+  }
+  .game-info {
+    background-color: rgba(43, 49, 80, 0.7);
+    backdrop-filter: blur(12px);
+    padding-inline: 32px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: calc(100% - 4rem);
+    justify-content: space-between;
+    gap: 3rem;
+    h1 {
+      font-family: "Bruno Ace SC", cursive;
+      font-size: 1.5rem;
+    }
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-width: 20%;
+      gap: 1rem;
+    }
+    .buy-button {
+      padding: 0.5rem 2rem;
+      font-weight: 700;
+    }
+    span {
+      display: flex;
+      gap: 8px;
+    }
+    p {
+      font-weight: bold;
+      font-size: 18px;
+      &.on-sale {
+        color: grey;
+        text-decoration: line-through;
+      }
+      &:not(:first-of-type) {
+        color: #91d55a;
+      }
+    }
+  }
+}
+
+#about {
+  grid-area: About;
+}
+
+#reviews {
+  grid-area: Reviews;
+}
+
+#requirements {
+  grid-area: Req;
+}
