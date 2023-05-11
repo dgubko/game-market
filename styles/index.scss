@@ -1,15 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&family=Chakra+Petch:wght@300;400;600;700&family=Commissioner:wght@100;300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Caudex:wght@400;700&family=Caudex:wght@400;700&family=Chakra+Petch:wght@300;400;600;700&family=Commissioner:wght@100;300;400;500;700&display=swap");
 
 @import "./Card.scss";
 @import "./SidePanel.scss";
 @import "./Forms.scss";
+@import "./GamePage.scss";
+
+// font-family: 'Bruno Ace SC', cursive;
+// font-family: 'Caudex', serif;
+// font-family: 'Chakra Petch', sans-serif;
+// font-family: 'Commissioner', sans-serif;
 
 body {
   margin: 0;
   background-color: hsl(230, 30%, 18%);
+  font-family: "Chakra Petch", sans-serif;
 }
 
-.main-page {
+.page-wrapper {
   display: flex;
   background-color: hsl(230, 30%, 18%);
   min-height: 100vh;
@@ -25,11 +32,21 @@ body {
 }
 
 .buy-button {
+  cursor: pointer;
+  border: none;
   text-decoration: none;
   color: #171b2b;
   background-color: #fbff39;
   padding: 4px 28px;
   border-radius: 4px;
+}
+
+.buy-button:active {
+  transform: scale(1.05);
+}
+
+.buy-button:hover {
+  transform: scale(0.95);
 }
 
 .card-description {

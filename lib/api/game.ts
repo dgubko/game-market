@@ -6,7 +6,11 @@ export async function getGames(
   res: NextApiResponse
 ): Promise<void | NextApiResponse<any | (any | null)>> {
   try {
-    const games = await prisma.game.findMany();
+    const games = await prisma.game.findMany({
+      include: {
+        reviews: true,
+      },
+    });
     return res.status(200).json({ games });
   } catch (error) {
     console.error(error);

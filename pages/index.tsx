@@ -4,6 +4,7 @@ import { GamesContainer } from "../components/GamesContainer/GamesContainer";
 import { SidePanel } from "@/components/SidePanel/SidePanel";
 import { SearchForm } from "@/components/SearchForm/SearchForm";
 import { SortFilter } from "@/components/SortFilter/SortFilter";
+import PageLayout from "@/components/PageLayout/PageLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="main-page">
-        <SidePanel />
+
+      <PageLayout>
         <div>
           <form className="filters" onSubmit={handleSubmit}>
             <SearchForm />
@@ -29,7 +30,7 @@ export default function Home() {
           </form>
           <GamesContainer />
         </div>
-      </main>
+      </PageLayout>
     </>
   );
 }
