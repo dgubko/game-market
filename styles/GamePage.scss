@@ -6,7 +6,21 @@
   grid-gap: 2rem;
   padding: 2rem;
   position: relative;
-  color: #fff;
+  color: #fffcfc;
+
+  .genre-pill {
+    background: #333952;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+    margin: 0;
+    margin-inline-end: 4px;
+    border-radius: 0.25rem;
+  }
+  & > div {
+    h2 {
+      border-bottom: 1px solid #4d536b;
+    }
+  }
 }
 
 #banner {
