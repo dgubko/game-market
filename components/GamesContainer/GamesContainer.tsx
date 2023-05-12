@@ -4,6 +4,19 @@ import fetcher from "@/lib/fetcher";
 import { Card } from "../Card/Card";
 import { useRouter } from "next/router";
 
+const Skeleton = () => (
+  <div className="skeleton cards">
+    {Array.from({ length: 8 }).map(() => (
+      <div className="load-card">
+        <div className="line image" />
+        <div className="line title" />
+        <div className="line desc" />
+        <div className="line button" />
+      </div>
+    ))}
+  </div>
+);
+
 export const GamesContainer = () => {
   const { query } = useRouter();
 
@@ -37,12 +50,14 @@ export const GamesContainer = () => {
   });
 
   return (
-    <div className="game-container">
-      {isLoading && <p>loading....</p>}
-      {errorMsg && <p>errorMsg</p>}
-      {(query.filter ? sorted : filtered).map((item) => (
-        <Card key={item.id} {...item} />
-      ))}
-    </div>
+    <>
+      {isLoading && <Skeleton />}
+      {errorMsg && <p className="error-msg">{errorMsg}</p>}
+      <div className="game-container">
+        {(query.filter ? sorted : filtered).map((item) => (
+          <Card key={item.id} {...item} />
+        ))}
+      </div>
+    </>
   );
 };
