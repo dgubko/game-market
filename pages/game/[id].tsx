@@ -34,13 +34,31 @@ const GamePage = ({ game }) => {
           </div>
           <div id="about">
             <h2>About this game</h2>
-            <p>{game.genre}</p>
+            {game.genre.split(", ").map((genre) => (
+              <p className="genre-pill">{genre}</p>
+            ))}
             <p>{game.description}</p>
+            <h3>Developed by:</h3>
             <p>{game.developer}</p>
           </div>
           <div id="requirements">
             <h2>System Requirements</h2>
-            <p>{game.minSystemReq}</p>
+            <h3>Minimal system requirements</h3>
+            <ul>
+              {game.minSystemReq.split("; ").map((req) => (
+                <li>{req}</li>
+              ))}
+            </ul>
+            {game.recSystemReq && (
+              <>
+                <h3>Recommended system requirements</h3>
+                <ul>
+                  {game.recSystemReq.split("; ").map((req) => (
+                    <li>{req}</li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
           <div id="reviews">
             <h2>Reviews</h2>
