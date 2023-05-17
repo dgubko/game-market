@@ -1,9 +1,9 @@
 import { SidePanel } from "@/components/SidePanel/SidePanel";
 import Head from "next/head";
 import PageLayout from "@/components/PageLayout/PageLayout";
+import { ReviewForm } from "@/components/ReviewForm/ReviewForm";
 
 const GamePage = ({ game }) => {
-  console.log(game);
   const hasSalePrice = game.salePrice < game.price;
 
   return (
@@ -35,7 +35,9 @@ const GamePage = ({ game }) => {
           <div id="about">
             <h2>About this game</h2>
             {game.genre.split(", ").map((genre) => (
-              <p className="genre-pill">{genre}</p>
+              <p key={genre} className="genre-pill">
+                {genre}
+              </p>
             ))}
             <p>{game.description}</p>
             <h3>Developed by:</h3>
@@ -46,7 +48,7 @@ const GamePage = ({ game }) => {
             <h3>Minimal system requirements</h3>
             <ul>
               {game.minSystemReq.split("; ").map((req) => (
-                <li>{req}</li>
+                <li key={req}>{req}</li>
               ))}
             </ul>
             {game.recSystemReq && (
@@ -54,7 +56,7 @@ const GamePage = ({ game }) => {
                 <h3>Recommended system requirements</h3>
                 <ul>
                   {game.recSystemReq.split("; ").map((req) => (
-                    <li>{req}</li>
+                    <li key={req}>{req}</li>
                   ))}
                 </ul>
               </>
@@ -62,6 +64,7 @@ const GamePage = ({ game }) => {
           </div>
           <div id="reviews">
             <h2>Reviews</h2>
+            <ReviewForm userId={"1"} gameId={game.id} />
             <p>No reviews yet</p>
           </div>
         </div>
