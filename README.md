@@ -1,0 +1,1 @@
+Game Market is a web application that displays games retrieved from the Store Atlas API. Users can view game details, including rating, description, and other information, as well as add or delete comments. Users can also save a game to a wishlist or buy a game.
