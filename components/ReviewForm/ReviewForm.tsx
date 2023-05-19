@@ -1,9 +1,8 @@
-import { log } from "console";
 import React from "react";
 
 export const ReviewForm = ({ userId, gameId }) => {
   const [title, setTitle] = React.useState<string>("");
-  const [rating, setRating] = React.useState<number>(0);
+  const [rating, setRating] = React.useState<string>("0");
   const [comment, setComment] = React.useState<string>("");
 
   const handleTitleChange = (event) => {
@@ -11,7 +10,7 @@ export const ReviewForm = ({ userId, gameId }) => {
   };
 
   const handleRatingChange = (event) => {
-    const newValue: number = parseInt(event.target.value);
+    const newValue: string = event.target.value;
     setRating(newValue);
   };
 
@@ -21,7 +20,19 @@ export const ReviewForm = ({ userId, gameId }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({ title, rating, comment, userId, gameId });
+    postReview({ title, stars: rating, comment, userId, gameId });
+  };
+
+  const postReview = async (review) => {
+    try {
+      await fetch("http://localhost:3000/api/review", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(review),
+      });
+    } catch (error) {}
   };
 
   return (
