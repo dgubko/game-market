@@ -19,8 +19,22 @@ export async function postReview(
   res: NextApiResponse
 ): Promise<void | NextApiResponse<any | (any | null)>> {
   try {
-    const review = await prisma.review.create({ data: req.body });
-    return res.status(200).json({ review });
+    if (
+      req.body.title &&
+      req.body.stars &&
+      req.body.comment &&
+      req.body.userId &&
+      req.body.gameId
+    ) {
+      const review = await prisma.review.create({ data: req.body });
+      return res.status(200).json({ review });
+    }
+
+    return res.status(400).json({
+      request: "POST: add new review",
+      message:
+        "Wrong review data has been send: title, string, comment, userId and gameId are required values and can be empty",
+    });
   } catch (error) {
     console.error(error);
     return res.status(500).end(error);
