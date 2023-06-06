@@ -25,7 +25,7 @@ export const ReviewForm = ({ userId, gameId }) => {
 
   const postReview = async (review) => {
     try {
-      await fetch("http://localhost:3000/api/review", {
+      await fetch(`${process.env.DEPLOY_URL}/api/review`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
