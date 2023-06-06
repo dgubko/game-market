@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 
 const Skeleton = () => (
   <div className="skeleton cards">
-    {Array.from({ length: 8 }).map(() => (
-      <div className="load-card">
+    {Array.from({ length: 8 }).map((_, i) => (
+      <div className="load-card" key={i}>
         <div className="line image" />
         <div className="line title" />
         <div className="line desc" />
