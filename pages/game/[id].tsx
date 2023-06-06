@@ -75,7 +75,7 @@ const GamePage = ({ game }) => {
 
 export async function getServerSideProps(context) {
   const { id: gameId } = context.query;
-  const res = await fetch(`${process.env.DEPLOY_URL}/api/game/${gameId}`);
+  const res = await fetch(`/api/game/${gameId}`);
   const { game } = await res.json();
 
   return {
